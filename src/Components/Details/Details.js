@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const Details = () => {
     const details = useLoaderData()
@@ -7,7 +9,11 @@ const Details = () => {
     return (
         <div className='my-5 mx-20'>
             <div className="">
-                <img src={img} alt="Shoes" className="rounded-xl w-full" />
+                <PhotoProvider>
+                    <PhotoView src={img}>
+                    <img src={img} style={{ objectFit: 'cover' }} alt="" />
+                    </PhotoView>
+                </PhotoProvider>
             <div className="">
                 <h2 className="text-3xl">{title}</h2>
                 <h2 className="text-2xl">Price: ${price}</h2>
