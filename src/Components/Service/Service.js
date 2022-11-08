@@ -12,12 +12,14 @@ const Service = () => {
     return (
         <div>
             <h3>service: {testItems.length}</h3>
-            {
-                testItems.map(singleItem => <TestItems
-                key={singleItem._id}
-                singleItem={singleItem}
-                ></TestItems>)
-            }
+                <div className='grid lg:grid-cols-3 gap-3'>
+                    {
+                    testItems.map(singleItem => <TestItems
+                    key={singleItem._id}
+                    singleItem={singleItem}
+                    ></TestItems>)
+                    }
+                </div>
         </div>
     );
 };
