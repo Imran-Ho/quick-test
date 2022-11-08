@@ -21,8 +21,8 @@ const Service = () => {
                     ></TestItems>)
                     }
                 </div>
-                <div className=''>
-                <Link className='' to='/all'>
+                <div className='justify-center'>
+                <Link to='/all'>
                     <button className='btn btn-primary'>See All</button>
                 </Link>
                 </div>

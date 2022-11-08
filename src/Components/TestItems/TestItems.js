@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TestItems = ({singleItem}) => {
     const {_id, title, img, price, description} = singleItem
@@ -11,7 +12,9 @@ const TestItems = ({singleItem}) => {
                 <h2 className="card-title">Price: ${price}</h2>
                 <p>{description}</p>
                 <div className="card-actions justify-end">
-                <button className="btn btn-primary">More Details</button>
+                <Link to={`/details/${_id}`}>
+                    <button className="btn btn-primary">More Details</button>
+                </Link>
                 </div>
             </div>
             </div>
