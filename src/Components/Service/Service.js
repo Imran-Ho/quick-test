@@ -15,14 +15,14 @@ const Service = () => {
             <h3>service: {testItems.length}</h3>
                 <div className='grid lg:grid-cols-3 gap-3'>
                     {
-                    testItems.map(singleItem => <TestItems
+                    testItems?.map(singleItem => <TestItems
                     key={singleItem._id}
                     singleItem={singleItem}
                     ></TestItems>)
                     }
                 </div>
                 <div className='justify-center'>
-                <Link to='/all'>
+                <Link className='' to='/all'>
                     <button className='btn btn-primary'>See All</button>
                 </Link>
                 </div>

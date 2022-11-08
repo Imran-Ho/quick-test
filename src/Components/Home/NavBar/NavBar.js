@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ContextAuth } from '../../ContextAPI/AuthContext';
 
 const NavBar = () => {
+    const {user, logOut} = useContext(ContextAuth)
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -14,6 +16,7 @@ const NavBar = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/'>Services</Link></li>
                     <li><Link to='/'>Blog</Link></li>
+                    <li><Link to='/login'>Login</Link></li>
                 </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">Quick Test</a>
@@ -23,10 +26,16 @@ const NavBar = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/'>Services</Link></li>
                     <li><Link to='/'>Blog</Link></li>
+                    
                 </ul>
             </div>
                 <div className="navbar-end">
-                     <a className="btn">Get started</a>
+                    <p>{user?.email}</p>
+                    {user?.email ? <li><Link to=''><button onClick={logOut}>Log Out</button></Link></li>
+                    :
+                    <li><Link to='/login'>Login</Link></li>
+                    }
+                     
                 </div>
             </div>
         </div>
