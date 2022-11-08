@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import TestItems from '../TestItems/TestItems';
 
 const Service = () => {
@@ -19,6 +20,11 @@ const Service = () => {
                     singleItem={singleItem}
                     ></TestItems>)
                     }
+                </div>
+                <div className=''>
+                <Link className='' to='/all'>
+                    <button className='btn btn-primary'>See All</button>
+                </Link>
                 </div>
         </div>
     );

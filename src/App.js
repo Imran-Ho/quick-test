@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './layer/Main';
-import Service from './Components/Service/Service';
+import AllItems from './Components/AllItems/AllItems';
+import Home from './Components/Home/Home';
 
 function App() {
   const router = createBrowserRouter([
@@ -10,7 +11,10 @@ function App() {
       path:'/', element: <Main></Main>,
       children:[
         {
-          path:'/tests', element: <Service></Service>
+          path:'/', element: <Home></Home>
+        },
+        {
+          path:'/all', element: <AllItems></AllItems>
         }
       ]
     }
