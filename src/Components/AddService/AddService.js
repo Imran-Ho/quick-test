@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import AuthContext, { ContextAuth } from '../ContextAPI/AuthContext';
+import { ContextAuth } from '../ContextAPI/AuthContext';
 
 const AddService = () => {
     const {user} = useContext(ContextAuth)
@@ -20,13 +20,8 @@ const AddService = () => {
             price,
             description,
         }
-        // if(phone.length > 11){
-        //     alert('phone number should be 11 characters')
-        // }
-        // else{
-
-        // }
-// post order to database 
+       
+// post service to database 
         fetch('http://localhost:5000/tests', {
             method: 'POST',
             headers: {
@@ -38,7 +33,7 @@ const AddService = () => {
         .then(data => {
             console.log(data)
             if(data.acknowledged){
-                alert('Order placed successfully')
+                alert('Service placed successfully')
                 form.reset();
             }
         })
