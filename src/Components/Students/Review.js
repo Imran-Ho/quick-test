@@ -2,7 +2,7 @@ import React from 'react';
 
 const Review = ({review}) => {
     // console.log(review)
-    const {photo, name, text} = review;
+    const {photo, name, text, service} = review;
     return (
         <div>
            <div className="overflow-x-auto w-full">
@@ -18,6 +18,7 @@ const Review = ({review}) => {
                             </div>
                             <div>
                             <div className="font-bold">{name}</div>
+                            <div className="font-bold">{service}</div>
                             <div className="text-sm opacity-50">{text}</div>
                             </div>
                         </div>

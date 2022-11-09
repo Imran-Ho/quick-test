@@ -27,7 +27,7 @@ const Details = () => {
             <div>
                 <div>
                     <h2 className='text-center text-2xl bg-green-500 rounded-lg'>Share Your opinion</h2>
-                    <Opinion></Opinion>
+                    <Opinion title={title}></Opinion>
                 </div>
             </div>
             <div>

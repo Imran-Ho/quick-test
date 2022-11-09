@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { ContextAuth } from '../ContextAPI/AuthContext';
 
-const Opinion = () => {
+const Opinion = ({title}) => {
     const {user} = useContext(ContextAuth)
 
     const ownReview = event =>{
@@ -16,6 +17,7 @@ const Opinion = () => {
         const review = {
            photo,
            name,
+           service: title,
            email,
            text
 
@@ -42,12 +44,20 @@ const Opinion = () => {
     }
     
     return (
+        
         <div>
+        {
+            !user?.email ? <h3 className='text-center text-1xl text-red-600 mt-5'>Please <Link className='text-blue-600' to='/login'>Login</Link>  first to add a review</h3> : <>
+            
+            <div>
             <div className="bg-base-200">
                 <div className="">
                     
                     <div className="card">
                     <form onSubmit={ownReview} className="card-body">
+                        <div className="form-control">
+                        <input name='service' type="text" defaultValue={title} className="input input-bordered" readOnly />
+                        </div>
                         <div className="form-control">
                         <input name='photo' type="text" placeholder="photo URL" className="input input-bordered" />
                         </div>
@@ -68,7 +78,10 @@ const Opinion = () => {
                     </div>
                 </div>
                 </div>
-        </div>
+        </div>            
+            </>
+        }
+    </div>
     );
 };
 
