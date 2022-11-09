@@ -26,15 +26,20 @@ const NavBar = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/'>Services</Link></li>
                     <li><Link to='/'>Blog</Link></li>
-                    
+                    {user?.email ? 
+                    <>
+                    <li><Link to='/myReview'>My Reviews</Link></li>
+                    <li><Link to='/addService'>Add Service</Link></li>
+                    <li><Link to=''><button onClick={logOut}>Log Out</button></Link></li>
+                    </>
+                    :
+                    <li><Link to='/login'>Login</Link></li>
+                    }
                 </ul>
             </div>
                 <div className="navbar-end">
                     <p>{user?.email}</p>
-                    {user?.email ? <li><Link to=''><button onClick={logOut}>Log Out</button></Link></li>
-                    :
-                    <li><Link to='/login'>Login</Link></li>
-                    }
+                    
                      
                 </div>
             </div>

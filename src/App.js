@@ -7,6 +7,8 @@ import Home from './Components/Home/Home';
 import Details from './Components/Details/Details';
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
+import MyReview from './Components/MyReview/MyReview';
+import AddService from './Components/AddService/AddService';
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +30,12 @@ function App() {
         },
         {
           path:'/signup', element: <Signup></Signup>
+        },
+        {
+          path:'/myReview', element: <MyReview></MyReview>
+        },
+        {
+          path:'/addService', element: <AddService></AddService>
         }
       ]
     }
