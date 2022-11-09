@@ -14,18 +14,18 @@ const NavBar = () => {
                 </label>
                 <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                     <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/'>Services</Link></li>
-                    <li><Link to='/'>Blog</Link></li>
+                    <li><Link to='/all'>Services</Link></li>
+                    <li><Link to='/blog'>Blog</Link></li>
                     <li><Link to='/login'>Login</Link></li>
                 </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Quick Test</a>
+                <a className="btn btn-ghost normal-case text-xl">Quick-Test</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/all'>Services</Link></li>
-                    <li><Link to='/'>Blog</Link></li>
+                    <li><Link to='/blog'>Blog</Link></li>
                     {user?.email ? 
                     <>
                     <li><Link to='/myReview'>My Reviews</Link></li>

@@ -11,6 +11,7 @@ import MyReview from './Components/MyReview/MyReview';
 import AddService from './Components/AddService/AddService';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import UpdateItem from './Components/MyReview/UpdateItem';
+import Blog from './Components/Blog/Blog';
 
 function App() {
   const router = createBrowserRouter([
@@ -21,11 +22,11 @@ function App() {
           path:'/', element: <Home></Home>
         },
         {
-          path:'/all', element: <AllItems></AllItems>
+          path:'/all', element: <PrivateRoute><AllItems></AllItems></PrivateRoute>
           // loader: ({params})=> fetch(`http://localhost:5000/tests/${params.id}`)
         },
         {
-          path:'/details/:id', element: <Details></Details>,
+          path:'/details/:id', element: <PrivateRoute><Details></Details></PrivateRoute>,
           loader: ({params})=> fetch(`http://localhost:5000/tests/${params.id}`)
         },
         {
@@ -44,6 +45,9 @@ function App() {
           path:'/updateItem/:id', element: <UpdateItem></UpdateItem>,
           loader: ({params}) => fetch(`http://localhost:5000/review/${params.id}`)
         },
+        {
+          path:'/blog', element: <Blog></Blog>
+        }
       ]
     }
   ])

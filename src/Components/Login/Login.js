@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ContextAuth } from '../ContextAPI/AuthContext';
+import useTitle from '../TitleHooks/useTitle';
 
 const Login = () => {
-    const {signIn, googleSignIn} = useContext(ContextAuth)
+    useTitle("Login")
+    const {signIn, googleSignIn, loading} = useContext(ContextAuth)
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
@@ -19,6 +21,9 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                if(loading){
+                    return <progress className="progress w-56">Loading</progress>
+                }
                 navigate(from, {replace: true})
             })
             .catch(error => console.error(error));
@@ -29,7 +34,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                // navigate(from, {replace: true})
+                navigate(from, {replace: true})
             })
             .catch(error => console.error(error));
         }

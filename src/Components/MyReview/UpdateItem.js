@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import swal from 'sweetalert';
 
 const UpdateItem = () => {
     const updateUser = useLoaderData()
@@ -31,7 +32,7 @@ const UpdateItem = () => {
             console.log(data)
             
             if(data.modifiedCount > 0){
-                alert('Update completed successfully')
+                swal('Update completed successfully')
                 form.reset()
             }
         })

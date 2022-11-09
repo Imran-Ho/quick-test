@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ContextAuth } from '../ContextAPI/AuthContext';
+import useTitle from '../TitleHooks/useTitle';
 
 const Signup = () => {
     const {createUser} = useContext(ContextAuth)
     const navigate = useNavigate()
-
+    useTitle('signup')
     const createNewUser = event =>{
         event.preventDefault();
         const form = event.target;

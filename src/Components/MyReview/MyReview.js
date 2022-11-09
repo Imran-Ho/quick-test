@@ -1,8 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ContextAuth } from '../ContextAPI/AuthContext';
+import useTitle from '../TitleHooks/useTitle';
 import SoloReview from './SoloReview';
+import swal from 'sweetalert';
 
 const MyReview = () => {
+    useTitle("MyReview")
 
     const { user, logOut} = useContext(ContextAuth);
     // console.log(user)
@@ -27,7 +30,7 @@ const MyReview = () => {
             .then(data => {
                 console.log(data)
                 if(data.deletedCount > 0){
-                    alert('deleted successfully')
+                    swal('deleted successfully')
                     const remaining = singleReview.filter(remainingReview => remainingReview._id !== id)
                     setSingleReview(remaining)
                 }

@@ -4,8 +4,10 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import Opinion from '../Opinion/Opinion';
 import Students from '../Students/Students';
+import useTitle from '../TitleHooks/useTitle';
 
 const Details = () => {
+    useTitle("Services")
     const details = useLoaderData()
     const {_id, title, img, description, price} = details
     return (

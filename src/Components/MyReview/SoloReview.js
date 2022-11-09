@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ContextAuth } from '../ContextAPI/AuthContext';
 
 const SoloReview = ({individual,handleDelete, updateHandler}) => {
+    const {user} = useContext(ContextAuth)
     // console.log(individual)
     const {_id, photo, service, name, text} = individual
     return (
         <div>
             <div className="card card-side bg-base-100 shadow-xl">
-                <figure><img className='h-40' src={photo} alt="Movie"/></figure>
+                <figure><img className='h-40' src={photo} alt={name}/></figure>
                 <div className="card-body">
                     <h2 className="card-title">Test Name: {service}</h2>
                     <h2 className="card-title">Student Name: {name}</h2>

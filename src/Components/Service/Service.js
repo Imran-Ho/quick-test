@@ -12,7 +12,8 @@ const Service = () => {
     }, [])
     return (
         <div>
-            <h3>service: {testItems.length}</h3>
+            <h3 className='text-4xl text-center text-orange-500 my-5'>Our Services are for you</h3>
+            <p className='text-1xl text-center text-sky-500 my-5'>We give a good qualitiful environment for having a homely feel place.</p>
                 <div className='grid lg:grid-cols-3 gap-3'>
                     {
                     testItems?.map(singleItem => <TestItems
