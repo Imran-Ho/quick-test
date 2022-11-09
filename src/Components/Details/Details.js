@@ -2,12 +2,14 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import Opinion from '../Opinion/Opinion';
+import Students from '../Students/Students';
 
 const Details = () => {
     const details = useLoaderData()
     const {title, img, description, price} = details
     return (
-        <div className='grid lg:grid-cols-2 my-5 mx-20'>
+        <div className='grid lg:grid-cols-3 mt-10 mb-5'>
             <div>
                 <div className="">
                     <PhotoProvider>
@@ -23,7 +25,14 @@ const Details = () => {
                 </div>
             </div>
             <div>
-                
+                <div>
+                    <h2 className='text-center text-2xl bg-green-500 rounded-lg'>Share Your opinion</h2>
+                    <Opinion></Opinion>
+                </div>
+            </div>
+            <div>
+                <h3 className='text-center text-2xl bg-orange-600 rounded-lg'>Students' reviews</h3>
+                <Students></Students>
             </div>
         </div>
     );
