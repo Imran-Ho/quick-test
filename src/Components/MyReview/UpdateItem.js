@@ -29,21 +29,27 @@ const UpdateItem = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            
+            if(data.modifiedCount > 0){
+                alert('Update completed successfully')
+                form.reset()
+            }
         })
     }
     return (
-        <div>
-            <div>
-            <h4>Your Name: {name}</h4>
-            <h6>Given Exam: ${service}</h6>
-            <form onSubmit={updateHandler}>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-3'>
-                <input name='name' type="text" placeholder="Name" className="input input-bordered input-accent w-full" />
-                <input name='photo' type="text" placeholder="Photo URL" className="input input-bordered input-accent w-full" />
-                <input name='email' type="text" defaultValue={email} className="input input-bordered input-accent w-full" readOnly />
+        <div className=''>
+            <div className=''>
+            <h4 className='text-3xl text-center'>Your Name: {name}</h4>
+            <h6 className='text-2xl text-center text-rose-700'>Given Exam: {service}</h6>
+            <form onSubmit={updateHandler} className='text-center my-5'>
+                <div className='text-center'>
+                <input name='name' type="text" placeholder="Name" className="input input-bordered w-80" /><br />
+                <input name='photo' type="text" placeholder="Photo URL" className="input input-bordered w-80" /><br />
+                <input name='email' type="text" defaultValue={email} className="input input-bordered w-80" readOnly /><br />
+                
+                <input name='text' className="input input-bordered h-24 w-80" placeholder="your opinion here"></input><br />
+                <input className='btn btn-outline my-5' type="submit" value="place your update" />
                 </div>
-                <textarea name='text' className="textarea textarea-bordered h-24 w-full" placeholder="your opinion here"></textarea>
-                <input className='btn' type="submit" value="place your order" />
             </form>
         </div>
             

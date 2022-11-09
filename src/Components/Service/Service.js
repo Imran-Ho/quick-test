@@ -6,7 +6,7 @@ const Service = () => {
     const [testItems, setTestItems] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/tests')
+        fetch('http://localhost:5000/limit')
         .then(res => res.json())
         .then(data => setTestItems(data))
     }, [])
@@ -21,7 +21,7 @@ const Service = () => {
                     ></TestItems>)
                     }
                 </div>
-                <div className='justify-center'>
+                <div className='flex justify-center align-middle my-5 '>
                 <Link className='' to='/all'>
                     <button className='btn btn-primary'>See All</button>
                 </Link>

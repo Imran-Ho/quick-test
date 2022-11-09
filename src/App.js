@@ -22,6 +22,7 @@ function App() {
         },
         {
           path:'/all', element: <AllItems></AllItems>
+          // loader: ({params})=> fetch(`http://localhost:5000/tests/${params.id}`)
         },
         {
           path:'/details/:id', element: <Details></Details>,

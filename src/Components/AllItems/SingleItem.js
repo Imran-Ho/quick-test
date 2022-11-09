@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleItem = ({single}) => {
-    const {title, img, description, price} = single
+    const {_id, title, img, description, price} = single
     return (
         <div>
             <div>
@@ -13,7 +13,7 @@ const SingleItem = ({single}) => {
                         <h2 className="card-title">Price: ${price}</h2>
                         <p>{description}</p>
                         <div className="card-actions justify-end">
-                        <Link to='/details'>
+                        <Link to={`/details/${_id}`}>
                             <button className="btn btn-primary">More Details</button>
                         </Link>
                 </div>
