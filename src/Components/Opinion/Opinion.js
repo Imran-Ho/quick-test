@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ContextAuth } from '../ContextAPI/AuthContext';
 
-const Opinion = ({title}) => {
+const Opinion = ({detail}) => {
     const {user} = useContext(ContextAuth)
+    const {_id, title} = detail;
 
     const ownReview = event =>{
         event.preventDefault()
@@ -15,6 +16,7 @@ const Opinion = ({title}) => {
         // console.log(photo, name, text)
 
         const review = {
+            id: _id,
            photo,
            name,
            service: title,

@@ -7,7 +7,7 @@ import Students from '../Students/Students';
 
 const Details = () => {
     const details = useLoaderData()
-    const {title, img, description, price} = details
+    const {_id, title, img, description, price} = details
     return (
         <div className='grid lg:grid-cols-3 mt-10 mb-5'>
             <div>
@@ -27,7 +27,7 @@ const Details = () => {
             <div>
                 <div>
                     <h2 className='text-center text-2xl bg-green-500 rounded-lg'>Share Your opinion</h2>
-                    <Opinion title={title}></Opinion>
+                    <Opinion detail={details}></Opinion>
                 </div>
             </div>
             <div>
