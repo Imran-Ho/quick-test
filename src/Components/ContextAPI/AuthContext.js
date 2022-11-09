@@ -30,12 +30,13 @@ const logOut = () => {
 }
 // google sign in
     const googleSignIn =()=>{
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     }
 
 useEffect( () =>{
     const unSubscribe = onAuthStateChanged( auth, currentUser =>{
-        console.log('current User inside state change', currentUser);
+        
         setUser(currentUser);
         setLoading(false);
     });
@@ -44,7 +45,7 @@ useEffect( () =>{
 
 }, [])
 
-    const authInfo = {user, createUser, signIn, logOut, googleSignIn}
+    const authInfo = {user, createUser, signIn, logOut, googleSignIn, loading}
     return (
         <ContextAuth.Provider value={authInfo}>
             {children}

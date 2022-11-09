@@ -9,6 +9,8 @@ import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
 import MyReview from './Components/MyReview/MyReview';
 import AddService from './Components/AddService/AddService';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import UpdateItem from './Components/MyReview/UpdateItem';
 
 function App() {
   const router = createBrowserRouter([
@@ -32,11 +34,15 @@ function App() {
           path:'/signup', element: <Signup></Signup>
         },
         {
-          path:'/myReview', element: <MyReview></MyReview>
+          path:'/myReview', element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
         },
         {
           path:'/addService', element: <AddService></AddService>
-        }
+        },
+        {
+          path:'/updateItem/:id', element: <UpdateItem></UpdateItem>,
+          loader: ({params}) => fetch(`http://localhost:5000/review/${params.id}`)
+        },
       ]
     }
   ])

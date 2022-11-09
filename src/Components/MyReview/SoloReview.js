@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const SoloReview = ({individual,handleDelete}) => {
+const SoloReview = ({individual,handleDelete, updateHandler}) => {
     // console.log(individual)
     const {_id, photo, service, name, text} = individual
     return (
@@ -12,7 +13,9 @@ const SoloReview = ({individual,handleDelete}) => {
                     <h2 className="card-title">Student Name: {name}</h2>
                     <p>Own Thought: {text}</p>
                     <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Update</button>
+                    <Link to={`/updateItem/${_id}`}>
+                        <button className="btn btn-primary">Update</button>
+                    </Link>
                     <button onClick={()=>handleDelete(_id)} className="btn btn-warning">Delete</button>
                     </div>
                 </div>

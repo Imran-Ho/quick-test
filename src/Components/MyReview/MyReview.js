@@ -34,6 +34,10 @@ const MyReview = () => {
             })
         }
     }
+// handle Update
+    const updateHandler = id =>{
+        console.log(id)
+    }
     return (
         <div className='mx-auto'>
             {
@@ -41,6 +45,7 @@ const MyReview = () => {
                 key={single._id}
                 individual={single}
                 handleDelete={handleDelete}
+                updateHandler={updateHandler}
                 ></SoloReview>)
             }
         </div>

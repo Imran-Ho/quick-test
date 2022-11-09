@@ -80,7 +80,7 @@ const Opinion = ({detail}) => {
                     </div>
                 </div>
                 </div>
-        </div>            
+                </div>            
             </>
         }
     </div>
