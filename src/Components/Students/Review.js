@@ -4,7 +4,7 @@ const Review = ({review}) => {
     // console.log(review)
     const {id, photo, name, text, service} = review;
     return (
-        <div>
+        <div className=''>
            <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <tbody>

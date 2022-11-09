@@ -52,7 +52,7 @@ const Opinion = ({detail}) => {
             !user?.email ? <h3 className='text-center text-1xl text-red-600 mt-5'>Please <Link className='text-blue-600' to='/login'>Login</Link>  first to add a review</h3> : <>
             
             <div>
-            <div className="bg-base-200">
+            <div className="bg-gray-300">
                 <div className="">
                     
                     <div className="card">

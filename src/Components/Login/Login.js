@@ -57,7 +57,7 @@ const Login = () => {
                         <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
-                    <p className='text-center my-3'>don't have an account please <Link to='/signup'>Sign up</Link></p>
+                    <p className='text-center my-3'>don't have an account please <Link className='text-blue-600' to='/signup'>Sign up</Link></p>
                     <button onClick={googleLogIn} className="btn btn-outline btn-secondary mb-3">Sign in with Google</button>
                     </div>
                 </div>

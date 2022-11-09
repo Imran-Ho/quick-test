@@ -12,7 +12,7 @@ const Students = () => {
         })
     },[reviews])
     return (
-        <div>
+        <div className=''>
             {
                 reviews.map(review => <Review
                 key={review._id}
