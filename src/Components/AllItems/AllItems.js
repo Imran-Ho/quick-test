@@ -16,7 +16,7 @@ const AllItems = () => {
     }, [])
 
     useEffect(()=>{
-        fetch('https://assignment-11-server-one-rosy.vercel.app/tests')
+        fetch('https://assignment-11-server-imran-ho.vercel.app/tests')
         .then(res => res.json())
         .then(data => {
             setTestItems(data)

@@ -6,7 +6,7 @@ const Service = () => {
     const [testItems, setTestItems] = useState([])
 
     useEffect(()=>{
-        fetch('https://assignment-11-server-one-rosy.vercel.app/limit')
+        fetch('https://assignment-11-server-imran-ho.vercel.app/limit')
         .then(res => res.json())
         .then(data => setTestItems(data))
     }, [])

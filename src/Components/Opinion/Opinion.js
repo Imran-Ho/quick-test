@@ -26,7 +26,7 @@ const Opinion = ({detail}) => {
         }
        
 // post service to database 
-        fetch('https://assignment-11-server-one-rosy.vercel.app/review', {
+        fetch('https://assignment-11-server-imran-ho.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

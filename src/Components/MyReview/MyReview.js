@@ -13,7 +13,11 @@ const MyReview = () => {
     // console.log(singleReview)
 
     useEffect(() => {
-        fetch(`https://assignment-11-server-one-rosy.vercel.app/review?email=${user?.email}`)
+        fetch(`https://assignment-11-server-imran-ho.vercel.app/review?email=${user?.email}`,{
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('quick-test-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setSingleReview(data))
 
@@ -23,7 +27,7 @@ const MyReview = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('are you going to delete?')
         if(proceed){
-            fetch(`https://assignment-11-server-one-rosy.vercel.app/review/${id}`,{
+            fetch(`https://assignment-11-server-imran-ho.vercel.app/review/${id}`,{
                 method:'DELETE'
             })
             .then(res => res.json())
@@ -42,7 +46,7 @@ const MyReview = () => {
         console.log(id)
     }
     return (
-        <div className='mx-auto'>
+        <div className='grid lg:grid-cols-2 gap-2 mx-5'>
             {
                 singleReview?.map(single => <SoloReview
                 key={single._id}

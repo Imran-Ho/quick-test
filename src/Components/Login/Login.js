@@ -33,7 +33,7 @@ const Login = () => {
                 }
                 console.log(currentUser)
 // get jwt token
-                fetch('https://assignment-11-server-one-rosy.vercel.app/jwt', {
+                fetch('https://assignment-11-server-imran-ho.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type' : 'application/json'

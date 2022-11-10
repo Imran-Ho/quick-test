@@ -23,11 +23,11 @@ function App() {
         },
         {
           path:'/all', element: <PrivateRoute><AllItems></AllItems></PrivateRoute>
-          // loader: ({params})=> fetch(`https://assignment-11-server-one-rosy.vercel.app/tests/${params.id}`)
+          // loader: ({params})=> fetch(`https://assignment-11-server-imran-ho.vercel.app/tests/${params.id}`)
         },
         {
           path:'/details/:id', element: <PrivateRoute><Details></Details></PrivateRoute>,
-          loader: ({params})=> fetch(`https://assignment-11-server-one-rosy.vercel.app/tests/${params.id}`)
+          loader: ({params})=> fetch(`https://assignment-11-server-imran-ho.vercel.app/tests/${params.id}`)
         },
         {
           path:'/login', element: <Login></Login>
@@ -43,7 +43,7 @@ function App() {
         },
         {
           path:'/updateItem/:id', element: <UpdateItem></UpdateItem>,
-          loader: ({params}) => fetch(`https://assignment-11-server-one-rosy.vercel.app/review/${params.id}`)
+          loader: ({params}) => fetch(`https://assignment-11-server-imran-ho.vercel.app/review/${params.id}`)
         },
         {
           path:'/blog', element: <Blog></Blog>
