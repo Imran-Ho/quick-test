@@ -5,7 +5,7 @@ const Students = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() =>{
-        fetch('http://localhost:5000/review')
+        fetch('https://assignment-11-server-one-rosy.vercel.app/review')
         .then(res => res.json())
         .then(data => {
             setReviews(data)

@@ -13,7 +13,7 @@ const MyReview = () => {
     // console.log(singleReview)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/review?email=${user?.email}`)
+        fetch(`https://assignment-11-server-one-rosy.vercel.app/review?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setSingleReview(data))
 
@@ -23,7 +23,7 @@ const MyReview = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('are you going to delete?')
         if(proceed){
-            fetch(`http://localhost:5000/review/${id}`,{
+            fetch(`https://assignment-11-server-one-rosy.vercel.app/review/${id}`,{
                 method:'DELETE'
             })
             .then(res => res.json())

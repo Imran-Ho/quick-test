@@ -20,7 +20,7 @@ const UpdateItem = () => {
             photo,
             text
         }
-        fetch(`http://localhost:5000/review/${_id}`,{
+        fetch(`https://assignment-11-server-one-rosy.vercel.app/review/${_id}`,{
         method: 'PUT',
         headers:{
             'content-type' : 'application/json'

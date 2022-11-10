@@ -27,7 +27,7 @@ const AddService = () => {
         }
        
 // post service to database 
-        fetch('http://localhost:5000/tests', {
+        fetch('https://assignment-11-server-one-rosy.vercel.app/tests', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
